@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class CashbackHackServiceTest {
    @Test
-   public void shouldCountBoundary(){
+   public void whenTheAmountEqualBoundary(){
        CashbackHackService cashback = new CashbackHackService();
        int amount = 1000;
 
@@ -15,4 +15,14 @@ public class CashbackHackServiceTest {
 
        assertEquals(expected, actual);
    }
+    @Test
+    public void whenTheAmountLessBoundary(){
+        CashbackHackService cashback = new CashbackHackService();
+        int amount = 585;
+
+        int actual = cashback.remain(amount);
+        int expected = 415;
+
+        assertEquals(expected, actual);
+    }
 }
